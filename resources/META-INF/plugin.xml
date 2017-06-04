@@ -1,0 +1,27 @@
+<idea-plugin version="2">
+  <name>GsonOrXmlFormat</name>
+  <description><![CDATA[
+<html>quickly to convert a JSON string to an InnerClassEntity class ..<br>
+<a href="https://github.com/yangxw8820/GsonOrXmlFormat"> openSource</a>
+      </html>
+      ]]>
+  </description>
+  <version>1.5.0</version>
+  <vendor email="yangxw8820@gmail.com">yangxw8820</vendor>
+  <idea-version since-build="107.121"/>
+  <change-notes><![CDATA[
+  <p>
+  1.0.0
+  <ul>
+  <li>New: Support for xml</li>
+  </ul>
+  </p>
+]]></change-notes>
+  <actions>
+    <action id="Gsonformat" class="org.gsonformat.intellij.MainAction" text="GsonOrXmlFormat">
+      <add-to-group group-id="GenerateGroup" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
+    </action>
+  </actions>
+  <extensions defaultExtensionNs="com.intellij"/>
+</idea-plugin>

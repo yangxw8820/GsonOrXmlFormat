@@ -1,4 +1,4 @@
-<idea-plugin version="2">
+<idea-plugin>
   <name>GsonOrXmlFormat</name>
   <description><![CDATA[
 <html>quickly to convert a JSON string to an InnerClassEntity class ..<br>

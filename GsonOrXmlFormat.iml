@@ -8,7 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/ThirdParty/json/java/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ThirdParty/treetable/java/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ThirdParty/dom4j/java/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -80,7 +80,7 @@ public class Config {
             config.setObjectFromDataStr1(PropertiesComponent.getInstance().getValue("objectFromDataStr1", Constant.objectFromObject1));
             config.setArrayFromDataStr(PropertiesComponent.getInstance().getValue("arrayFromDataStr", Constant.arrayFromData));
             config.setArrayFromData1Str(PropertiesComponent.getInstance().getValue("arrayFromData1Str", Constant.arrayFromData1));
-            config.setAnnotationStr(PropertiesComponent.getInstance().getValue("annotationStr", Constant.gsonAnnotation));
+            config.setAnnotationStr(PropertiesComponent.getInstance().getValue("annotationStr", Constant.noneAnnotation));
             config.setEntityPackName(PropertiesComponent.getInstance().getValue("entityPackName"));
             config.setFiledNamePreFixStr(PropertiesComponent.getInstance().getValue("filedNamePreFixStr"));
             config.setErrorCount(PropertiesComponent.getInstance().getOrInitInt("errorCount", 0));
@@ -131,6 +131,7 @@ public class Config {
         if (annotationStr.equals(Constant.loganSquareAnnotation)) {
             return Constant.loganSquareFullNameAnnotation;
         }
+
         return annotationStr.replaceAll("\\(", "(").replaceAll("\\)", ")").replaceAll("\\s\\*", "");
     }
 
@@ -311,4 +312,11 @@ public class Config {
         save();
     }
 
+    public boolean isUseSerialized() {
+        if (annotationStr.equals(Constant.noneAnnotation)) {
+            return false;
+        }
+
+        return true;
+    }
 }

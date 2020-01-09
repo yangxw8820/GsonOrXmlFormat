@@ -98,6 +98,7 @@ public class Constant {
 
     public static final String autoValueAnnotation = "autoValue";
     public static final String lombokAnnotation = "lombok";
+    public static final String noneAnnotation = "none";
 
     public static final String loganSquareFullNameAnnotation = "@com.bluelinelabs.logansquare.annotation.JsonField(name=\"{filed}\")";
 

@@ -34,13 +34,14 @@ public class SettingDialog extends JFrame {
     private JRadioButton jackRB;
     private JRadioButton fastJsonRB;
     private JRadioButton otherRB;
+    private JRadioButton lombokRB;
+    private JRadioButton noneRB;
     private JTextField annotationFT;
     private JCheckBox virgoModelCB;
     private JCheckBox generateCommentsCT;
     private JRadioButton loganSquareCB;
     private JRadioButton autoValueRadioButton;
     private JCheckBox splitGenerateMode;
-    private JRadioButton lombokRB;
     private String annotaionStr;
 
     public SettingDialog(Project project) {
@@ -228,6 +229,29 @@ public class SettingDialog extends JFrame {
                 array1Button.setEnabled(false);
             }
         });
+        noneRB.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                if (noneRB.isSelected()) {
+                    annotationFT.setText(Constant.noneAnnotation);
+                }
+                annotationFT.setEnabled(false);
+                objectFromDataCB.setEnabled(false);
+                objectFromData1CB.setEnabled(false);
+                arrayFromDataCB.setEnabled(false);
+                arrayFromData1CB.setEnabled(false);
+                annotationFT.setEnabled(false);
+                objectFromDataCB.setSelected(false);
+                objectFromData1CB.setSelected(false);
+                arrayFromDataCB.setSelected(false);
+                arrayFromData1CB.setSelected(false);
+                objectButton.setEnabled(false);
+                object1Button.setEnabled(false);
+                arrayButton.setEnabled(false);
+                array1Button.setEnabled(false);
+            }
+        });
         jackRB.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -275,6 +299,9 @@ public class SettingDialog extends JFrame {
             annotationFT.setEnabled(false);
         } else if (annotaionStr.equals(Constant.autoValueAnnotation)) {
             autoValueRadioButton.setSelected(true);
+            annotationFT.setEnabled(false);
+        } else if (annotaionStr.equals(Constant.noneAnnotation)) {
+            noneRB.setSelected(true);
             annotationFT.setEnabled(false);
         } else {
             otherRB.setSelected(true);

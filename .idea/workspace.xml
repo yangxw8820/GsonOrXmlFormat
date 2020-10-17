@@ -19,13 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40bd3162-9b0d-47fd-9de9-7d88823f54ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/GsonOrXmlFormat.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="40bd3162-9b0d-47fd-9de9-7d88823f54ff" name="Default Changelist" comment="适配最新版本">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GsonOrXmlFormat.zip" beforeDir="false" afterPath="$PROJECT_DIR$/GsonOrXmlFormat.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/gsonformat/intellij/MainAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/gsonformat/intellij/MainAction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -56,16 +62,19 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.32068965" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace\JavaProjects\GsonOrXmlFormat" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -104,7 +113,16 @@
       <workItem from="1602919050348" duration="195000" />
       <workItem from="1602919274896" duration="26000" />
       <workItem from="1602919358156" duration="8000" />
+      <workItem from="1602919862986" duration="2282000" />
     </task>
+    <task id="LOCAL-00001" summary="适配最新版本">
+      <created>1602919463631</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602919463631</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,26 +140,90 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="适配最新版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="适配最新版本" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="361" y="86" key="#Project_Structure" timestamp="1602919300254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="86" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1602919300254" />
-    <state x="384" y="183" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602919118650">
+    <state x="384" y="183" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602920265955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="384" y="183" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602919118650" />
-    <state x="522" y="227" key="FileChooserDialogImpl" timestamp="1602919209032">
+    <state x="384" y="183" width="1092" height="716" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602920265955" />
+    <state x="522" y="227" key="FileChooserDialogImpl" timestamp="1602920403100">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="522" y="227" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602919209032" />
+    <state x="522" y="227" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602920403100" />
+    <state width="1340" height="328" key="GridCell.Tab.0.bottom" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.0.center" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.0.left" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.0.right" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.2.bottom" timestamp="1602922074586">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074586" />
+    <state width="1340" height="328" key="GridCell.Tab.2.center" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.2.left" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
+    <state width="1340" height="328" key="GridCell.Tab.2.right" timestamp="1602922074585">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602922074585" />
     <state x="651" y="230" key="RollbackChangesDialog" timestamp="1602918850521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="651" y="230" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602918850521" />
-    <state x="695" y="108" key="SettingsEditor" timestamp="1602919177227">
+    <state x="695" y="108" key="SettingsEditor" timestamp="1602921826671">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="695" y="108" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602919177227" />
+    <state x="695" y="108" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1602921826671" />
+    <state x="472" y="264" key="Vcs.Push.Dialog.v2" timestamp="1602919529926">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="472" y="264" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1602919529926" />
+    <state x="375" y="139" key="new project wizard" timestamp="1602920426463">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="375" y="139" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1602920426463" />
+    <state x="535" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1602921757648">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="535" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602921757648" />
   </component>
 </project>

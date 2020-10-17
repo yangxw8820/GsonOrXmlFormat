@@ -1,4 +1,5 @@
 <idea-plugin>
+  <id>org.gsonformat.intellij</id>
   <name>GsonOrXmlFormat</name>
   <description><![CDATA[
 <html>quickly to convert a JSON string to an InnerClassEntity class ..<br>
@@ -6,9 +7,8 @@
       </html>
       ]]>
   </description>
-  <version>1.5.0</version>
+  <version>2.0.0</version>
   <vendor email="yangxw8820@gmail.com">yangxw8820</vendor>
-  <idea-version since-build="107.121"/>
   <change-notes><![CDATA[
   <p>
   1.0.0
@@ -17,11 +17,27 @@
   </ul>
   </p>
 ]]></change-notes>
+
   <actions>
-    <action id="Gsonformat" class="org.gsonformat.intellij.MainAction" text="GsonOrXmlFormat">
+    <action id="Gsonformat" class="org.gsonformat.intellij.MainAction" text="GsonOrXmlFormat" description="GsonOrXmlFormat">
       <add-to-group group-id="GenerateGroup" anchor="last"/>
       <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
     </action>
   </actions>
-  <extensions defaultExtensionNs="com.intellij"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
 </idea-plugin>

@@ -4,25 +4,22 @@
  */
 package org.jdesktop.swingx.ux;
 
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTree;
-import javax.swing.tree.TreePath;
-
-import org.gsonformat.intellij.entity.FieldEntity;
 import org.gsonformat.intellij.entity.ClassEntity;
+import org.gsonformat.intellij.entity.FieldEntity;
 import org.jdesktop.swingx.renderer.CellContext;
 import org.jdesktop.swingx.renderer.ComponentProvider;
 import org.jdesktop.swingx.treetable.DefaultMutableTreeTableNode;
 
+import javax.swing.*;
+import javax.swing.tree.TreePath;
+import java.awt.*;
+
 /**
- *
  * @author vearn
  */
 public class CheckTreeCellProvider extends ComponentProvider<JPanel> {
 
-    private CheckTreeSelectionModel selectionModel;
+    private final CheckTreeSelectionModel selectionModel;
     private TristateCheckBox _checkBox = null;
     private JLabel _label = null;
 
@@ -39,10 +36,10 @@ public class CheckTreeCellProvider extends ComponentProvider<JPanel> {
         JTree tree = (JTree) arg0.getComponent();
         DefaultMutableTreeTableNode node = (DefaultMutableTreeTableNode) arg0.getValue();
         Object obj = node.getUserObject();
-        if(obj instanceof FieldEntity){
+        if (obj instanceof FieldEntity) {
             _label.setText(((FieldEntity) obj).getKey());
             _checkBox.setSelector((FieldEntity) obj);
-        }else if(obj instanceof ClassEntity){
+        } else if (obj instanceof ClassEntity) {
             _label.setText(((ClassEntity) obj).getClassName());
             _checkBox.setSelector((ClassEntity) obj);
         }

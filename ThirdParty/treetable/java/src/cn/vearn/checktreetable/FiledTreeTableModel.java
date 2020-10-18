@@ -14,8 +14,8 @@ import org.jdesktop.swingx.ux.CellProvider;
  */
 public class FiledTreeTableModel extends DefaultTreeTableModel {
 
-    private String[] _names = {" Key ", "Value", "Data Type", " Field name "};
-    private Class[] _types = {Object.class, Object.class, Object.class, Object.class};
+    private final String[] _names = {" Key ", "Value", "Data Type", " Field name "};
+    private final Class[] _types = {Object.class, Object.class, Object.class, Object.class};
 
 
     public FiledTreeTableModel(TreeTableNode node) {
@@ -73,7 +73,7 @@ public class FiledTreeTableModel extends DefaultTreeTableModel {
             if (o != null && o instanceof CellProvider) {
                 CellProvider cellProvider = (CellProvider) o;
 
-                cellProvider.setValueAt(column,value.toString());
+                cellProvider.setValueAt(column, value.toString());
             }
         }
     }
@@ -84,9 +84,6 @@ public class FiledTreeTableModel extends DefaultTreeTableModel {
         if (column == 2) {
             return true;
         }
-        if (column == 3) {
-            return true;
-        }
-        return false;
+        return column == 3;
     }
 }

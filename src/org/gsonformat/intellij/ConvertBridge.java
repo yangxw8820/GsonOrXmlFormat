@@ -2,22 +2,20 @@ package org.gsonformat.intellij;
 
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.MessageType;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.source.PsiClassReferenceType;
 import org.apache.http.util.TextUtils;
 import org.gsonformat.intellij.action.DataWriter;
+import org.gsonformat.intellij.common.CheckUtil;
+import org.gsonformat.intellij.common.PsiClassUtil;
 import org.gsonformat.intellij.common.StringUtils;
 import org.gsonformat.intellij.common.Utils;
 import org.gsonformat.intellij.config.Config;
+import org.gsonformat.intellij.entity.ClassEntity;
 import org.gsonformat.intellij.entity.DataType;
 import org.gsonformat.intellij.entity.FieldEntity;
-import org.gsonformat.intellij.entity.ClassEntity;
-import org.gsonformat.intellij.common.CheckUtil;
-import org.gsonformat.intellij.common.PsiClassUtil;
 import org.gsonformat.intellij.entity.IterableFieldEntity;
 import org.gsonformat.intellij.ui.FieldsDialog;
-import org.gsonformat.intellij.ui.Toast;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
@@ -38,20 +36,20 @@ import java.util.regex.Pattern;
 public class ConvertBridge {
 
     private PsiClass targetClass;
-    private PsiClass currentClass;
-    private PsiElementFactory factory;
-    private Project project;
-    private PsiFile file;
-    private String jsonStr;
+    private final PsiClass currentClass;
+    private final PsiElementFactory factory;
+    private final Project project;
+    private final PsiFile file;
+    private final String jsonStr;
     private HashMap<String, FieldEntity> declareFields;
     private HashMap<String, ClassEntity> declareClass;
-    private String generateClassName;
-    private ClassEntity generateClassEntity = new ClassEntity();
+    private final String generateClassName;
+    private final ClassEntity generateClassEntity = new ClassEntity();
     private StringBuilder fullFilterRegex = null;
     private StringBuilder briefFilterRegex = null;
     private String filterRegex = null;
-    private Operator operator;
-    private String packageName;
+    private final Operator operator;
+    private final String packageName;
 
     public ConvertBridge(Operator operator,
                          String jsonStr, PsiFile file, Project project,
@@ -136,7 +134,7 @@ public class ConvertBridge {
     }
 
     private JSONObject parseJSONObject(String jsonStr) {
-        // 判断类型 json xml
+        // 判断类型 json or xml
         if (jsonStr.startsWith("{")) {
             return new JSONObject(jsonStr);
         } else if (jsonStr.startsWith("[")) {
@@ -145,7 +143,7 @@ public class ConvertBridge {
             if (jsonArray.length() > 0 && jsonArray.get(0) instanceof JSONObject) {
                 return getJsonObject(jsonArray);
             }
-        } else if (jsonStr.startsWith("<")) {
+        } else if (jsonStr.startsWith("<")) { // xml
             return XML.toJSONObject(jsonStr);
         }
         return null;
@@ -724,6 +722,10 @@ public class ConvertBridge {
     }
 
 
+    public enum Error {
+        DATA_ERROR, PARSE_ERROR, PATH_ERROR
+    }
+
     public interface Operator {
 
         void showError(Error err);
@@ -735,10 +737,6 @@ public class ConvertBridge {
         void setErrorInfo(String error);
 
         void cleanErrorInfo();
-    }
-
-    public enum Error {
-        DATA_ERROR, PARSE_ERROR, PATH_ERROR;
     }
 }
 

@@ -38,10 +38,6 @@ public class FieldEntity implements Selector, CellProvider {
         return fieldName;
     }
 
-    public String getGenerateFieldName() {
-        return CheckUtil.getInstant().handleArg(fieldName);
-    }
-
     public void setFieldName(String fieldName) {
         if (TextUtils.isEmpty(fieldName)) {
             return;
@@ -49,16 +45,16 @@ public class FieldEntity implements Selector, CellProvider {
         this.fieldName = fieldName;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
+    public String getGenerateFieldName() {
+        return CheckUtil.getInstant().handleArg(fieldName);
     }
 
     public String getType() {
         return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getRealType() {
@@ -86,10 +82,6 @@ public class FieldEntity implements Selector, CellProvider {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public void checkAndSetType(String text) {
         if (type != null && CheckUtil.getInstant().checkSimpleType(type.trim())) {
             //基本类型
@@ -110,8 +102,16 @@ public class FieldEntity implements Selector, CellProvider {
         return key;
     }
 
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public String getValue() {
         return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -157,7 +157,7 @@ public class FieldEntity implements Selector, CellProvider {
                 checkAndSetType(text);
                 break;
             case 3:
-                if(CheckUtil.getInstant().containsDeclareFieldName(text)){
+                if (CheckUtil.getInstant().containsDeclareFieldName(text)) {
                     return;
                 }
                 CheckUtil.getInstant().removeDeclareFieldName(getFieldName());

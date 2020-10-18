@@ -15,11 +15,11 @@ import java.util.regex.Pattern;
 public class CheckUtil {
 
     private static CheckUtil sCheckUtil;
-    private List<String> keyWordList = new ArrayList<String>();
-    private List<String> simpleTypeList = new ArrayList<String>();
-    private Set<String> declareClassNameList = new HashSet();
-    private Set<String> declareFieldNameList = new HashSet();
-    private static Pattern sPattern = Pattern.compile("^\\d+");
+    private static final Pattern sPattern = Pattern.compile("^\\d+");
+    private final List<String> keyWordList = new ArrayList<String>();
+    private final List<String> simpleTypeList = new ArrayList<String>();
+    private final Set<String> declareClassNameList = new HashSet();
+    private final Set<String> declareFieldNameList = new HashSet();
 
     private CheckUtil() {
         keyWordList.add("abstract");

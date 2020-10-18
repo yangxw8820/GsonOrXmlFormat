@@ -4,23 +4,19 @@
  */
 package org.jdesktop.swingx.ux;
 
+import org.jdesktop.swingx.treetable.DefaultMutableTreeTableNode;
+
+import javax.swing.tree.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-import javax.swing.tree.DefaultTreeSelectionModel;
-import javax.swing.tree.TreeModel;
-import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
-import javax.swing.tree.TreeSelectionModel;
-import org.jdesktop.swingx.treetable.DefaultMutableTreeTableNode;
 
 /**
- *
  * @author Santhosh Kumar T - santhosh@in.fiorano.com
  */
 public class CheckTreeSelectionModel extends DefaultTreeSelectionModel {
 
-    private TreeModel model;
+    private final TreeModel model;
 
     public CheckTreeSelectionModel(TreeModel model) {
         this.model = model;
@@ -59,8 +55,8 @@ public class CheckTreeSelectionModel extends DefaultTreeSelectionModel {
 
     // is path1 descendant of path2
     private boolean isDescendant(TreePath path1, TreePath path2) {
-        Object obj1[] = path1.getPath();
-        Object obj2[] = path2.getPath();
+        Object[] obj1 = path1.getPath();
+        Object[] obj2 = path2.getPath();
         for (int i = 0; i < obj2.length; i++) {
             if (obj1[i] != obj2[i]) {
                 return false;

@@ -19,7 +19,7 @@ public class StringUtils {
         }
         text = text.trim();
 
-        if (text.equals(text.toUpperCase())){ // 如果全是大写
+        if (text.equals(text.toUpperCase())) { // 如果全是大写
             text = text.toLowerCase();//转成小写
         }
 
@@ -59,7 +59,7 @@ public class StringUtils {
         text = text.trim();
 
         // 判断是否是全部大写
-        if (text.equals(text.toUpperCase())){
+        if (text.equals(text.toUpperCase())) {
             return text;
         }
 
@@ -67,7 +67,7 @@ public class StringUtils {
         if (!TextUtils.isEmpty(temp)) {
             // 转换类似这样的字段USER_NAME->user_name
             int indexOf = temp.indexOf("_");
-            if (indexOf > 0){
+            if (indexOf > 0) {
                 temp = temp.toLowerCase();
             }
 

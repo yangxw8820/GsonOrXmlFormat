@@ -10,7 +10,7 @@ import org.gsonformat.intellij.entity.ClassEntity;
 class FastJsonProcessor extends Processor {
 
     @Override
-    public void onStarProcess(ClassEntity classEntity, PsiElementFactory factory, PsiClass cls,IProcessor visitor) {
+    public void onStarProcess(ClassEntity classEntity, PsiElementFactory factory, PsiClass cls, IProcessor visitor) {
         super.onEndProcess(classEntity, factory, cls, visitor);
     }
 }

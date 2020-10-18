@@ -3,12 +3,11 @@ package org.gsonformat.intellij.process;
 import com.intellij.psi.*;
 import org.apache.http.util.TextUtils;
 import org.gsonformat.intellij.common.FieldHelper;
-import org.gsonformat.intellij.common.PsiClassUtil;
 import org.gsonformat.intellij.common.Try;
 import org.gsonformat.intellij.config.Config;
 import org.gsonformat.intellij.config.Constant;
-import org.gsonformat.intellij.entity.FieldEntity;
 import org.gsonformat.intellij.entity.ClassEntity;
+import org.gsonformat.intellij.entity.FieldEntity;
 
 import java.util.regex.Pattern;
 
@@ -16,6 +15,10 @@ import java.util.regex.Pattern;
  * Created by dim on 16/11/7.
  */
 class AutoValueProcessor extends Processor {
+
+    public static String getAutoAdpaterClass(String className) {
+        return String.join("_", className.split("\\."));
+    }
 
     @Override
     public void onStarProcess(ClassEntity classEntity, PsiElementFactory factory, PsiClass cls, IProcessor visitor) {
@@ -61,10 +64,6 @@ class AutoValueProcessor extends Processor {
 //            String autoAdapter = qualifiedName.substring(mainPackage.length()+1, qualifiedName.length());
 //            createMethod(factory, Constant.autoValueMethodTemplate.replace("$className$", classEntity.getClassName()).replace("$AdapterClassName$", getAutoAdpaterClass(autoAdapter)).trim(), cls);
 //        }
-    }
-
-    public static String getAutoAdpaterClass(String className) {
-        return String.join("_", className.split("\\."));
     }
 
     @Override

@@ -16,16 +16,18 @@ public class Try {
                 e1.printStackTrace();
                 try {
                     tryListener.error();
-                }catch (Exception e3){
+                } catch (Exception e3) {
                     e3.printStackTrace();
                 }
             }
         }
     }
 
-    public  interface TryListener {
+    public interface TryListener {
         void run();
+
         void runAgain();
+
         void error();
     }
 

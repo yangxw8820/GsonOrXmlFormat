@@ -1,10 +1,7 @@
 package org.gsonformat.intellij.common;
 
 import com.intellij.ide.util.DirectoryUtil;
-import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.source.PsiJavaFileImpl;
@@ -35,7 +32,7 @@ public class PsiClassUtil {
             return null;
         }
         String className = strArray[strArray.length - 1];
-        String packName = generateClass.substring(generateClass.length() - className.length(), generateClass.length());
+        String packName = generateClass.substring(generateClass.length() - className.length());
         if (file.exists()) {
             for (int i = 0; i < strArray.length - 1; i++) {
                 psiDirectory = psiDirectory.findSubdirectory(strArray[i]);
@@ -145,19 +142,12 @@ public class PsiClassUtil {
         return DirectoryUtil.createSubdirectories(packageName, sourcePackageRoot, ".");
     }
 
-    private PsiClass getPsiClassByName(Project project, String cls) {
-        GlobalSearchScope searchScope = GlobalSearchScope.allScope(project);
-        JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
-        return javaPsiFacade.findClass(cls, searchScope);
-    }
-
-
     public static String getPackage(PsiClass cls) {
         if (cls.getQualifiedName() == null) {
             return null;
         }
         int i = cls.getQualifiedName().lastIndexOf(".");
-        if (i < 0){
+        if (i < 0) {
             return null;
         }
         return cls.getQualifiedName().substring(0, i);
@@ -167,6 +157,12 @@ public class PsiClassUtil {
         PsiClass classInModule = JavaPsiFacade.getInstance(project).findClass(className,
                 new EverythingGlobalScope(project));
         return classInModule != null;
+    }
+
+    private PsiClass getPsiClassByName(Project project, String cls) {
+        GlobalSearchScope searchScope = GlobalSearchScope.allScope(project);
+        JavaPsiFacade javaPsiFacade = JavaPsiFacade.getInstance(project);
+        return javaPsiFacade.findClass(cls, searchScope);
     }
 
 

@@ -1,6 +1,7 @@
 package org.gsonformat.intellij;
 
 import com.intellij.codeInsight.CodeInsightActionHandler;
+import com.intellij.codeInsight.generation.actions.BaseGenerateAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
@@ -16,13 +17,10 @@ import org.gsonformat.intellij.ui.JsonDialog;
  * Time: 下午1:44
  */
 public class MainAction extends BaseGenerateAction {
-
-    @SuppressWarnings("unused")
     public MainAction() {
-        super(null);
+        this(null);
     }
 
-    @SuppressWarnings("unused")
     public MainAction(CodeInsightActionHandler handler) {
         super(handler);
     }
@@ -49,7 +47,5 @@ public class MainAction extends BaseGenerateAction {
         jsonD.setSize(600, 400);
         jsonD.setLocationRelativeTo(null);
         jsonD.setVisible(true);
-
     }
-
 }

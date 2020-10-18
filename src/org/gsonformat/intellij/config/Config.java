@@ -41,29 +41,6 @@ public class Config {
 
     }
 
-    public void save() {
-
-        PropertiesComponent.getInstance().setValue("fieldPrivateMode", "" + isFieldPrivateMode());
-        PropertiesComponent.getInstance().setValue("useSerializedName", isUseSerializedName() + "");
-        PropertiesComponent.getInstance().setValue("objectFromData", objectFromData + "");
-        PropertiesComponent.getInstance().setValue("objectFromData1", objectFromData1 + "");
-        PropertiesComponent.getInstance().setValue("arrayFromData", arrayFromData + "");
-        PropertiesComponent.getInstance().setValue("arrayFromData1", arrayFromData1 + "");
-        PropertiesComponent.getInstance().setValue("objectFromDataStr", objectFromDataStr + "");
-        PropertiesComponent.getInstance().setValue("objectFromDataStr1", objectFromDataStr1 + "");
-        PropertiesComponent.getInstance().setValue("arrayFromData1Str", arrayFromData1Str + "");
-        PropertiesComponent.getInstance().setValue("suffixStr", suffixStr + "");
-        PropertiesComponent.getInstance().setValue("reuseEntity", reuseEntity + "");
-        PropertiesComponent.getInstance().setValue("virgoMode", virgoMode + "");
-        PropertiesComponent.getInstance().setValue("filedNamePreFixStr", filedNamePreFixStr + "");
-        PropertiesComponent.getInstance().setValue("annotationStr", annotationStr + "");
-        PropertiesComponent.getInstance().setValue("errorCount", errorCount + "");
-        PropertiesComponent.getInstance().setValue("entityPackName", entityPackName + "");
-        PropertiesComponent.getInstance().setValue("useFieldNamePrefix", useFieldNamePrefix + "");
-        PropertiesComponent.getInstance().setValue("generateComments", generateComments + "");
-        PropertiesComponent.getInstance().setValue("splitGenerate", splitGenerate + "");
-    }
-
     public static Config getInstant() {
 
         if (config == null) {
@@ -93,6 +70,29 @@ public class Config {
         return config;
     }
 
+    public void save() {
+
+        PropertiesComponent.getInstance().setValue("fieldPrivateMode", "" + isFieldPrivateMode());
+        PropertiesComponent.getInstance().setValue("useSerializedName", isUseSerializedName() + "");
+        PropertiesComponent.getInstance().setValue("objectFromData", objectFromData + "");
+        PropertiesComponent.getInstance().setValue("objectFromData1", objectFromData1 + "");
+        PropertiesComponent.getInstance().setValue("arrayFromData", arrayFromData + "");
+        PropertiesComponent.getInstance().setValue("arrayFromData1", arrayFromData1 + "");
+        PropertiesComponent.getInstance().setValue("objectFromDataStr", objectFromDataStr + "");
+        PropertiesComponent.getInstance().setValue("objectFromDataStr1", objectFromDataStr1 + "");
+        PropertiesComponent.getInstance().setValue("arrayFromData1Str", arrayFromData1Str + "");
+        PropertiesComponent.getInstance().setValue("suffixStr", suffixStr + "");
+        PropertiesComponent.getInstance().setValue("reuseEntity", reuseEntity + "");
+        PropertiesComponent.getInstance().setValue("virgoMode", virgoMode + "");
+        PropertiesComponent.getInstance().setValue("filedNamePreFixStr", filedNamePreFixStr + "");
+        PropertiesComponent.getInstance().setValue("annotationStr", annotationStr + "");
+        PropertiesComponent.getInstance().setValue("errorCount", errorCount + "");
+        PropertiesComponent.getInstance().setValue("entityPackName", entityPackName + "");
+        PropertiesComponent.getInstance().setValue("useFieldNamePrefix", useFieldNamePrefix + "");
+        PropertiesComponent.getInstance().setValue("generateComments", generateComments + "");
+        PropertiesComponent.getInstance().setValue("splitGenerate", splitGenerate + "");
+    }
+
     public boolean isUseFieldNamePrefix() {
         return useFieldNamePrefix;
     }
@@ -105,6 +105,10 @@ public class Config {
         return objectFromData;
     }
 
+    public void setObjectFromData(boolean objectFromData) {
+        this.objectFromData = objectFromData;
+    }
+
     public int getErrorCount() {
         return errorCount;
     }
@@ -115,6 +119,10 @@ public class Config {
 
     public String getEntityPackName() {
         return entityPackName;
+    }
+
+    public void setEntityPackName(String entityPackName) {
+        this.entityPackName = entityPackName;
     }
 
     public String geFullNameAnnotation() {
@@ -135,17 +143,12 @@ public class Config {
         return annotationStr.replaceAll("\\(", "(").replaceAll("\\)", ")").replaceAll("\\s\\*", "");
     }
 
-
     public boolean isGenerateComments() {
         return generateComments;
     }
 
     public void setGenerateComments(boolean generateComments) {
         this.generateComments = generateComments;
-    }
-
-    public void setEntityPackName(String entityPackName) {
-        this.entityPackName = entityPackName;
     }
 
     public boolean isVirgoMode() {
@@ -172,10 +175,6 @@ public class Config {
         this.annotationStr = annotationStr;
     }
 
-    public void setObjectFromData(boolean objectFromData) {
-        this.objectFromData = objectFromData;
-    }
-
     public boolean isObjectFromData1() {
         return objectFromData1;
     }
@@ -200,37 +199,36 @@ public class Config {
         this.arrayFromData1 = arrayFromData1;
     }
 
+    public String getObjectFromDataStr() {
+        return objectFromDataStr;
+    }
 
     public void setObjectFromDataStr(String objectFromDataStr) {
         this.objectFromDataStr = objectFromDataStr;
-    }
-
-    public void setObjectFromDataStr1(String objectFromDataStr1) {
-        this.objectFromDataStr1 = objectFromDataStr1;
-    }
-
-    public void setArrayFromDataStr(String arrayFromDataStr) {
-        this.arrayFromDataStr = arrayFromDataStr;
-    }
-
-    public void setArrayFromData1Str(String arrayFromData1Str) {
-        this.arrayFromData1Str = arrayFromData1Str;
-    }
-
-    public String getObjectFromDataStr() {
-        return objectFromDataStr;
     }
 
     public String getObjectFromDataStr1() {
         return objectFromDataStr1;
     }
 
+    public void setObjectFromDataStr1(String objectFromDataStr1) {
+        this.objectFromDataStr1 = objectFromDataStr1;
+    }
+
     public String getArrayFromDataStr() {
         return arrayFromDataStr;
     }
 
+    public void setArrayFromDataStr(String arrayFromDataStr) {
+        this.arrayFromDataStr = arrayFromDataStr;
+    }
+
     public String getArrayFromData1Str() {
         return arrayFromData1Str;
+    }
+
+    public void setArrayFromData1Str(String arrayFromData1Str) {
+        this.arrayFromData1Str = arrayFromData1Str;
     }
 
     public String getSuffixStr() {
@@ -308,15 +306,11 @@ public class Config {
         if (entityPackName == null) {
             return;
         }
-        setEntityPackName(entityPackName+".");
+        setEntityPackName(entityPackName + ".");
         save();
     }
 
     public boolean isUseSerialized() {
-        if (annotationStr.equals(Constant.noneAnnotation)) {
-            return false;
-        }
-
-        return true;
+        return !annotationStr.equals(Constant.noneAnnotation);
     }
 }

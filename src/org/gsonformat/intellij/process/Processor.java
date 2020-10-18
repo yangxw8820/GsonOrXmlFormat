@@ -22,7 +22,7 @@ import static org.gsonformat.intellij.common.StringUtils.captureName;
  */
 public abstract class Processor {
 
-    private static HashMap<ConvertLibrary, Processor> sProcessorMap = new HashMap<>();
+    private static final HashMap<ConvertLibrary, Processor> sProcessorMap = new HashMap<>();
 
     static {
         sProcessorMap.put(ConvertLibrary.Gson, new GsonProcessor());
@@ -35,12 +35,11 @@ public abstract class Processor {
         sProcessorMap.put(ConvertLibrary.None, new NoneProcessor());
     }
 
+    protected String mainPackage;
 
     static Processor getProcessor(ConvertLibrary convertLibrary) {
         return sProcessorMap.get(convertLibrary);
     }
-
-    protected String mainPackage;
 
     public void process(ClassEntity classEntity, PsiElementFactory factory, PsiClass cls, IProcessor visitor) {
         mainPackage = PsiClassUtil.getPackage(cls);

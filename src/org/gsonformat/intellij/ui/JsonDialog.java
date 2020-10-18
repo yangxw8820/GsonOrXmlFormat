@@ -205,6 +205,7 @@ public class JsonDialog extends JFrame implements ConvertBridge.Operator {
         new ConvertBridge(this, jsonSTR, file, project, generateClass,
                 cls, generateClassName).run();
     }
+
     private void onCancel() {
         dispose();
     }

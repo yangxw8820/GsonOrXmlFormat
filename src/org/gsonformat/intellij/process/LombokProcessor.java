@@ -48,7 +48,7 @@ public class LombokProcessor extends Processor {
             Try.run(new Try.TryListener() {
                 @Override
                 public void run() {
-                    cls.add(factory.createFieldFromText(generateLombokFieldText(classEntity, fieldEntity,null), cls));
+                    cls.add(factory.createFieldFromText(generateLombokFieldText(classEntity, fieldEntity, null), cls));
                 }
 
                 @Override
@@ -75,7 +75,7 @@ public class LombokProcessor extends Processor {
         injectAnnotation(factory, generateClass);
     }
 
-    private String generateLombokFieldText(ClassEntity classEntity, FieldEntity fieldEntity,String fixme) {
+    private String generateLombokFieldText(ClassEntity classEntity, FieldEntity fieldEntity, String fixme) {
         fixme = fixme == null ? "" : fixme;
 
         StringBuilder fieldSb = new StringBuilder();

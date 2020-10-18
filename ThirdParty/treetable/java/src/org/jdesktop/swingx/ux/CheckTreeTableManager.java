@@ -4,26 +4,25 @@
  */
 package org.jdesktop.swingx.ux;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JCheckBox;
-import javax.swing.JTree;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
-import javax.swing.tree.TreePath;
 import org.jdesktop.swingx.JXTreeTable;
 import org.jdesktop.swingx.renderer.DefaultTreeRenderer;
 
+import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.TreePath;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 /**
- *
  * @author Santhosh Kumr T - santhosh@in.fiorano.com
  */
 public class CheckTreeTableManager extends MouseAdapter implements TreeSelectionListener {
 
-    private CheckTreeSelectionModel selectionModel;
-    private JXTreeTable treetable;
-    private JTree tree;
     int hotspot = new JCheckBox().getPreferredSize().width;
+    private final CheckTreeSelectionModel selectionModel;
+    private final JXTreeTable treetable;
+    private final JTree tree;
 
     public CheckTreeTableManager(JXTreeTable treeTable) {
         this.treetable = treeTable;

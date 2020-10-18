@@ -1,8 +1,9 @@
 package org.gsonformat.intellij.process;
 
-import com.intellij.psi.*;
-import org.gsonformat.intellij.entity.ConvertLibrary;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiElementFactory;
 import org.gsonformat.intellij.entity.ClassEntity;
+import org.gsonformat.intellij.entity.ConvertLibrary;
 
 
 /**
@@ -10,9 +11,9 @@ import org.gsonformat.intellij.entity.ClassEntity;
  */
 public class ClassProcessor {
 
-    private PsiElementFactory factory;
-    private PsiClass cls;
-    private Processor processor;
+    private final PsiElementFactory factory;
+    private final PsiClass cls;
+    private final Processor processor;
 
     public ClassProcessor(PsiElementFactory factory, PsiClass cls) {
         this.factory = factory;

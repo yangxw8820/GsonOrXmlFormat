@@ -1,6 +1,6 @@
 package org.gsonformat.intellij.entity;
 
-import com.intellij.psi.*;
+import com.intellij.psi.PsiClass;
 import org.apache.http.util.TextUtils;
 import org.gsonformat.intellij.common.CheckUtil;
 import org.jdesktop.swingx.ux.CellProvider;
@@ -18,8 +18,8 @@ public class ClassEntity implements Selector, CellProvider {
     private PsiClass psiClass;
     private String fieldTypeSuffix;
     private String className;
-    private List<FieldEntity> fields = new ArrayList<>();
-    private List<ClassEntity> innerClasss = new ArrayList<>();
+    private final List<FieldEntity> fields = new ArrayList<>();
+    private final List<ClassEntity> innerClasss = new ArrayList<>();
     private String packName;
     /**
      * 存储 comment
@@ -90,7 +90,7 @@ public class ClassEntity implements Selector, CellProvider {
     }
 
     public void setClassName(String className) {
-        this.className =  CheckUtil.getInstant().handleArg(className);
+        this.className = CheckUtil.getInstant().handleArg(className);
     }
 
     public List<? extends FieldEntity> getFields() {

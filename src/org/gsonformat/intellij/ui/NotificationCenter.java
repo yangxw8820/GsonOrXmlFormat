@@ -14,7 +14,7 @@ public class NotificationCenter {
     }
 
     public static void sendNotification(String message, NotificationType notificationType) {
-        if(message  == null || message.trim().length()==0){
+        if (message == null || message.trim().length() == 0) {
             return;
         }
         Notification notification = new Notification("com.dim.plugin.Gsonformat", "Gsonformat ", espaceString(message), notificationType);

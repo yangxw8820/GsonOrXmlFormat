@@ -1,43 +1,48 @@
 <idea-plugin>
-  <id>org.gsonformat.intellij</id>
-  <name>GsonOrXmlFormat</name>
-  <description><![CDATA[
-<html>quickly to convert a JSON string to an InnerClassEntity class ..<br>
+    <id>org.gsonformat.intellij</id>
+    <name>GsonOrXmlFormat</name>
+    <description><![CDATA[
+<html>quickly to convert a JSON string or a XML string to an InnerClassEntity class ..<br>
 <a href="https://github.com/yangxw8820/GsonOrXmlFormat"> openSource</a>
       </html>
       ]]>
-  </description>
-  <version>2.0.0</version>
-  <vendor email="yangxw8820@gmail.com">yangxw8820</vendor>
-  <change-notes><![CDATA[
+    </description>
+    <version>2.0.0</version>
+    <vendor email="yangxw8820@gmail.com">yangxw8820</vendor>
+    <change-notes><![CDATA[
   <p>
-  1.0.0
-  <ul>
-  <li>New: Support for xml</li>
-  </ul>
+    2.0.0
+    <ul>
+        <li>New: Support New Idea</li>
+    </ul>
   </p>
-]]></change-notes>
+  <p>
+    1.0.0
+    <ul>
+        <li>New: Support for xml</li>
+    </ul>
+  </p>
+  ]]></change-notes>
 
-  <actions>
-    <action id="Gsonformat" class="org.gsonformat.intellij.MainAction" text="GsonOrXmlFormat" description="GsonOrXmlFormat">
-      <add-to-group group-id="GenerateGroup" anchor="last"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
-    </action>
-  </actions>
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
 
-  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
 
-  <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
-  </extensions>
-
-  <actions>
-    <!-- Add your actions here -->
-  </actions>
-
+    <actions>
+        <!-- Add your actions here -->
+        <action id="Gsonformat" class="org.gsonformat.intellij.MainAction" text="GsonOrXmlFormat"
+                description="GsonOrXmlFormat">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
+        </action>
+    </actions>
 </idea-plugin>

@@ -7,7 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ThirdParty/httpcore/java/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ThirdParty/json/java/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ThirdParty/treetable/java/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

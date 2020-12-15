@@ -253,10 +253,7 @@ public class ConvertBridge {
      * @return
      */
     public String removeComment(String str) {
-        String temp = str.replaceAll("/\\*" +
-                "[\\S\\s]*?" +
-                "\\*/", "");
-        return temp.replaceAll("//[\\S\\s]*?\n", "");
+        return StringUtils.removeComment(str);
     }
 
     private List<FieldEntity> collectDeclareFields(PsiClass mClass) {

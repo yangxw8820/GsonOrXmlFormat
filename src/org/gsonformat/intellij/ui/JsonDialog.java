@@ -10,6 +10,7 @@ import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;
 import org.gsonformat.intellij.ConvertBridge;
 import org.gsonformat.intellij.common.PsiClassUtil;
+import org.gsonformat.intellij.common.StringUtils;
 import org.gsonformat.intellij.config.Config;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -70,7 +71,7 @@ public class JsonDialog extends JFrame implements ConvertBridge.Operator {
         formatBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String json = editTP.getText();
-                json = json.trim();
+                json = StringUtils.removeComment(json.trim());
                 if (json.startsWith("{")) {
                     JSONObject jsonObject = new JSONObject(json);
                     String formatJson = jsonObject.toString(4);

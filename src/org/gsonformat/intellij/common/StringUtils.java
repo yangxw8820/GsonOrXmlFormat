@@ -100,4 +100,16 @@ public class StringUtils {
         return null;
     }
 
+    /**
+     * 过滤掉// 和/** 注释
+     *
+     * @param str
+     * @return
+     */
+    public static String removeComment(String str) {
+        String temp = str.replaceAll("/\\*" +
+                "[\\S\\s]*?" +
+                "\\*/", "");
+        return temp.replaceAll("([^:]//.*\"?$)|(/\\*(.*?)\\*/)\n", "");
+    }
 }

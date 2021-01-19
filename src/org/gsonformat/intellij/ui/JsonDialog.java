@@ -26,19 +26,21 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 
+/**
+ * GsonOrXmlFormat对话框
+ */
 public class JsonDialog extends JFrame implements ConvertBridge.Operator {
-
     private CardLayout cardLayout;
     private JPanel contentPane2;
     private JButton okButton;
     private JButton cancelButton;
     private JLabel errorLB;
-    private JTextPane editTP;
     private JButton settingButton;
     private JLabel generateClassLB;
     private JTextField generateClassTF;
     private JPanel generateClassP;
     private JButton formatBtn;
+    private JTextArea editTP;
     private PsiClass cls;
     private PsiFile file;
     private Project project;
@@ -50,7 +52,7 @@ public class JsonDialog extends JFrame implements ConvertBridge.Operator {
         this.file = file;
         this.project = project;
         setContentPane(contentPane2);
-        setTitle("GsonFormat");
+        setTitle("GsonOrXmlFormat");
         getRootPane().setDefaultButton(okButton);
         this.setAlwaysOnTop(true);
         initGeneratePanel(file);
@@ -58,7 +60,6 @@ public class JsonDialog extends JFrame implements ConvertBridge.Operator {
     }
 
     private void initListener() {
-
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (generateClassTF.isFocusOwner()) {
@@ -146,7 +147,6 @@ public class JsonDialog extends JFrame implements ConvertBridge.Operator {
     }
 
     private void initGeneratePanel(PsiFile file) {
-
         cardLayout = (CardLayout) generateClassP.getLayout();
         generateClassTF.setBackground(errorLB.getBackground());
         currentClass = ((PsiJavaFileImpl) file).getPackageName() + "." + file.getName().split("\\.")[0];

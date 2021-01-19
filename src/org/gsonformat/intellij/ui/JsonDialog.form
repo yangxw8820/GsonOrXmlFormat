@@ -99,11 +99,10 @@
               <size top="2" left="2" bottom="2" right="2"/>
             </border>
             <children>
-              <component id="134f1" class="javax.swing.JTextPane" binding="editTP">
+              <component id="e1927" class="javax.swing.JTextArea" binding="editTP">
                 <constraints/>
                 <properties>
-                  <enabled value="true"/>
-                  <margin top="1" left="1" bottom="1" right="1"/>
+                  <lineWrap value="true"/>
                 </properties>
               </component>
             </children>
